@@ -1,0 +1,57 @@
+var xPos = -200;
+var yPos = 0;
+var x = 200;
+var y = 0;
+noStroke();
+
+draw = function() {
+    background(29, 40, 115);
+    fill(255, 242, 0);
+    beginShape();
+    vertex(230 + xPos, 220 + yPos);
+    vertex(240 + xPos, 200 + yPos);
+    vertex(250 + xPos, 220 + yPos);
+    vertex(270 + xPos, 220 + yPos);
+    vertex(250 + xPos, 232 + yPos);
+    vertex(260 + xPos, 260 + yPos);
+    vertex(240 + xPos, 240 + yPos);
+    vertex(220 + xPos,260 + yPos);
+    vertex(230 + xPos,232 + yPos);
+    vertex(210 + xPos,220 + yPos);
+    endShape();
+    xPos += 5;
+    yPos -= 2;
+    
+    //Second Star
+    beginShape();
+    vertex(230 + x, 220 + y);
+    vertex(240 + x, 200 + y);
+    vertex(250 + x, 220 + y);
+    vertex(270 + x, 220 + y);
+    vertex(250 + x, 232 + y);
+    vertex(260 + x, 260 + y);
+    vertex(240 + x, 240 + y);
+    vertex(220 + x,260 + y);
+    vertex(230 + x,232 + y);
+    vertex(210 + x,220 + y);
+    endShape();
+    x -= 5;
+    y -= 2;
+    
+    
+    //Backdrop
+    fill(26, 2, 2);
+    rect(200,300,30,100);
+    fill(117, 88, 14);
+    triangle(215,270,200,300,230,300);
+    fill(128, 13, 13);
+    ellipse(140,350,100,50);
+    fill(26,2,2);
+    rect(90,350,100,50);
+    rect(300,300,30,100);
+    fill(117, 88, 14);
+    triangle(315,270,300,300,330,300);
+    fill(26,2,2);
+    rect(230,375,100,10);
+    rect(230,325,100,10);
+};
