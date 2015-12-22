@@ -1,0 +1,78 @@
+var bodyX = 200;
+var bodyY = 234;
+var bodyW = 120;
+var bodyH = bodyW/2;
+var leftLegX = bodyX - 30;
+var leftLegY = bodyY + 50;
+var rightLegX = bodyX + 30;
+var rightLegY = bodyY + 50;
+var leftArmX = bodyX - 40;
+var leftArmY = bodyY - 25;
+var rightArmX = bodyX + 40;
+var rightArmY = bodyY - 25;
+var leftEarX = bodyX - 25;
+var leftEarY = bodyY - 80;
+var rightEarX = bodyX + 25;
+var rightEarY = bodyY - 80;
+var leftEyeBX = bodyX - 12;
+var leftEyeBY = bodyY - 75;
+var rightEyeBX = bodyX + 12;
+var rightEyeBY = bodyY-75;
+var mouthX = bodyX;
+var mouthY = bodyY - 60;
+var trampX = bodyX;
+var trampY = bodyY + 80;
+var stretch = 0;
+
+
+
+draw = function() {
+    bodyX += 0;
+    bodyY += 0;
+    bodyW += 0.1;
+    bodyH = bodyW/2;
+    leftLegX = bodyX - 30;
+    leftLegY = bodyY + 50;
+    rightLegX = bodyX + 30;
+    rightLegY = bodyY + 50;
+    leftArmX = bodyX - 40;
+    leftArmY = bodyY - 25;
+    rightArmX = bodyX + 40;
+    rightArmY = bodyY - 25;
+    leftEarX = bodyX - 25;
+    leftEarY = bodyY - 80;
+    rightEarX = bodyX + 25;
+    rightEarY = bodyY - 80;
+    leftEyeBX = bodyX - 12;
+    leftEyeBY = bodyY - 75;
+    rightEyeBX = bodyX + 12;
+    rightEyeBY = bodyY-75;
+    mouthX = bodyX;
+    mouthY = bodyY - 60;
+    trampX = bodyX;
+    trampY = bodyY + 80;
+    stretch = 0;
+    background(207, 254, 255);
+    noStroke();
+    fill(0, 0, 0);
+    ellipse(leftEarX, leftEarY, bodyW/4, bodyH/2); // left ear
+    ellipse(rightEarX, rightEarY, bodyW/4, bodyH/2); // right ear
+    ellipse(leftLegX, leftLegY, bodyW/3, bodyH); // left leg
+    ellipse(rightLegX, rightLegY, bodyW/3, bodyH); // right leg
+    ellipse(leftArmX, leftArmY, bodyW, bodyH/2); //left arm
+    ellipse(rightArmX, rightArmY, bodyW, bodyH/2);
+    ellipse(bodyX, bodyY, bodyW, 106); // body?
+    fill(255, 255, 255);
+    ellipse(bodyX, bodyY, bodyW * 0.85, bodyW * 0.65);
+    ellipse(bodyX, bodyY-70, bodyH, 47); // head?
+    fill(0, 0, 0);
+    ellipse(leftEyeBX, leftEyeBY, bodyW/7, bodyH/2.5); // left eye black
+    ellipse(rightEyeBX, rightEyeBY, bodyW/7, bodyH/2.5); // right eye black
+    fill(255, 255, 255);
+    ellipse(leftEyeBX, leftEyeBY, bodyW/15, bodyH/5); //left eye
+    ellipse(rightEyeBX, rightEyeBY, bodyW/15, bodyH/5); //right eye
+    fill(179, 20, 20);
+    arc(mouthX, mouthY, bodyW/5, bodyH/3, 1, 180); //mouth
+    fill(82, 138, 50);
+    arc(trampX, trampY, bodyW * 4, bodyH/stretch, 1, 180);
+};
