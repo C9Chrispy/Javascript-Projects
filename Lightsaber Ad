@@ -1,0 +1,32 @@
+var messageOne = "Be the...";
+var messageTwo = "Get yours today";
+draw= function() {
+    if (mouseX >=200) {
+        background(0, 0, 0);
+        fill(mouseX-100, 0, 0);
+        textSize(25);
+        text(messageOne, 150, 50);
+        text(messageTwo, 100, 350);
+        text("Darkness", 250, 100);
+        fill(119, 138, 145);
+        rect(mouseX,mouseY,10,40);
+        fill(mouseX-155, 10, 10);
+        rect(mouseX, mouseY - 140, 10, 140);
+        fill(255, 0, 0);
+        rect(mouseX + 10, mouseY + 2, 3, 5);
+    }
+    if (mouseY <= 200) {
+        background(0, 0, 0);
+        fill(0, 0, 255-mouseX);
+        textSize(25);
+        text(messageOne, 150, 50);
+        text(messageTwo, 100, 350);
+        text("Light", 50, 100);
+        fill(119, 138, 145);
+        rect(mouseX,mouseY,10,40);
+        fill(0, 0, 255-mouseX);
+        rect(mouseX, mouseY - 140, 10, 140);
+        fill(255, 0, 0);
+        rect(mouseX + 10, mouseY + 2, 3, 5);
+    }
+};
