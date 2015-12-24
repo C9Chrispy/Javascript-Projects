@@ -1,0 +1,45 @@
+background(89, 216, 255);
+var drawFish = function(centerX, centerY, bodyLength, bodyHeight, bodyColor, tailWidth, eyeSize, eyeColor, tailColor) {
+    noStroke();
+    fill(bodyColor);
+    // body
+    ellipse(centerX, centerY, bodyLength, bodyHeight);
+    // tail
+    var tailWidth = bodyLength/4;
+    var tailHeight = bodyHeight/2;
+    fill(tailColor);
+    triangle(centerX-bodyLength/2, centerY,
+            centerX-bodyLength/2-tailWidth, centerY-tailHeight,
+            centerX-bodyLength/2-tailWidth, centerY+tailHeight);
+    // eye
+    var eyeSize;
+    fill(eyeColor);
+    ellipse(centerX+bodyLength/4, centerY, eyeSize, eyeSize);
+    };
+
+// Bubble Drawing Function
+var drawBubbles = function(bubbleX, bubbleY, bubbleSize, bubbleColor) {
+    noStroke();
+    fill(bubbleColor);
+    ellipse(bubbleX, bubbleY, bubbleSize, bubbleSize);
+    };
+
+// Draws Random Fish At Mouse Location When Clicked
+var mouseClicked = function() {
+    drawFish(mouseX, mouseY, random(20,200), random(15,150), color(random(0,255), random(0,255), random(0,255)), random(0,100), random(0,50), color(random(0,255), random(0,255), random(0,255)), color(random(0,255), random(0,255), random(0,255)));
+    };
+
+// Random Fish Click Call
+mouseClicked();
+
+// Bubbles
+drawBubbles(random(0,400),random(0,400),20,color(142, 230, 245));
+drawBubbles(random(0,400),random(0,400),20,color(142, 230, 245));
+drawBubbles(random(0,400),random(0,400),20,color(142, 230, 245));
+drawBubbles(random(0,400),random(0,400),20,color(142, 230, 245));
+drawBubbles(random(0,400),random(0,400),20,color(142, 230, 245));
+drawBubbles(random(0,400),random(0,400),20,color(142, 230, 245));
+drawBubbles(random(0,400),random(0,400),20,color(142, 230, 245));
+drawBubbles(random(0,400),random(0,400),20,color(142, 230, 245));
+drawBubbles(random(0,400),random(0,400),20,color(142, 230, 245));
+drawBubbles(random(0,400),random(0,400),20,color(142, 230, 245));
