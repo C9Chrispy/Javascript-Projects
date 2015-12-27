@@ -1,0 +1,29 @@
+fill(0, 0, 0);
+ellipse(200, 200, 375, 375);
+fill(60, 0, 255);
+triangle(200, 104, 280, 280, 120, 280);
+fill(255, 255, 255);
+var answer = floor(random(1, 5));
+if (answer === 1) {
+    text("PROBABLY", 170, 200);
+    text("NOT", 190, 229); 
+}
+else if (answer === 2) {
+    text("SORRY", 180, 200);
+    text("THAT'S", 180, 229);
+    text("NOT HAPPENING", 155, 260);
+}
+else if (answer === 3) {
+    text("YES", 185, 200);
+    text("GOOD FOR U", 165, 229);
+}
+else if (answer === 4) {
+    text("SORRY", 180, 200);
+    text("I CAN'T TELL", 170, 229);
+    text("YOU THAT", 170, 260);
+}
+else if (answer === 5) {
+    text("KEEP", 180, 200);
+    text("WORKING HARD", 155, 229);
+    text("AND IT WILL HAPPEN", 140, 260);
+}
