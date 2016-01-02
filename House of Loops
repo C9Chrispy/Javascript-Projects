@@ -1,0 +1,52 @@
+background(219, 255, 255);
+
+fill(174, 180, 214);
+triangle(200, 28, 350, 150, 50, 150);
+
+fill(255, 255, 255);
+rect(60, 150, 280, 207);
+
+// bricks
+for (var brickX = 60; brickX < 340; brickX += 40) {
+    for (var brickY = 150; brickY < 357; brickY += 15) {
+        if (brickX % 100 === 0) {
+            stroke(68, 85, 194);
+            fill(0, 0, 0);
+        }
+        else if (brickY % 2 === 0) {
+            stroke(81, 143, 60);
+            fill(119, 33, 148);
+        }
+        else{
+            stroke(242, 164, 80);
+            fill(212, 55, 55);
+        }
+        rect(brickX, brickY, 40, 15);
+    }
+}
+
+// door
+fill(120, 80, 19);
+rect(180, 280, 40, 77);
+
+// windows
+for (var winX = 85; winX < 300; winX += 40) {
+    for (var winY = 160;  winY < 270; winY += 40) {
+        fill(58, 189, 194);
+        stroke(24, 110, 186);
+        rect(winX, winY, 30, 30);
+    }
+}
+
+// grass
+noStroke();
+for (var grassX = 0; grassX < 400; grassX += 3) {
+    if (grassX % 2 === 1) {
+        fill(41, 122, 36);
+        rect(grassX, 360, 3, 40);
+    }
+    else {
+        fill(162, 194, 33);
+        rect(grassX, 360, 3, 40);
+    }
+}
