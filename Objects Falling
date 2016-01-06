@@ -1,0 +1,45 @@
+var xPositions = [200];
+var yPositions = [0];
+// random colored drops
+var colorR = [0, 204, 21, 51, 71, 111, 153, 171, 184, 206];
+var colorG = [255, 102, 100, 115, 76, 217, 249, 200, 18, 144];
+var colorB = [0, 0, 69, 182, 166, 242, 221, 112, 53, 42];
+
+mouseClicked = function() {
+    xPositions.push(mouseX);
+    yPositions.push(mouseY);
+};
+
+draw = function() {
+    background(204, 247, 255);
+    for (var i = 0; i < xPositions.length; i++) {
+        if (i % 2 === 0) {
+            noStroke();
+            fill(colorR[i % 10], colorG[i % 10], colorB[i % 10]);
+            rect(xPositions[i], yPositions[i], 10, 10);
+            // Once drop hits bottom, starts back at top
+            if (yPositions[i] >= 400) {
+                yPositions[i] = 0; 
+            }
+        }
+        else if (i % 3 === 0) {
+            noStroke();
+            fill(colorR[i % 10], colorG[i % 10], colorB[i % 10]);
+            triangle(xPositions[i], yPositions[i], xPositions[i] + 10, yPositions[i] + 10, xPositions[i] - 10, yPositions[i] + 10);
+            // Once drop hits bottom, starts back at top
+            if (yPositions[i] >= 400) {
+                yPositions[i] = 0;
+            }
+        }
+        else {
+            noStroke();
+            fill(colorR[i % 10], colorG[i % 10], colorB[i % 10]);
+            ellipse(xPositions[i], yPositions[i], 10, 10);
+            // Once drop hits bottom, starts back at top
+            if (yPositions[i] >= 400) {
+                yPositions[i] = 0;
+            }
+        }
+        yPositions[i] += 5;
+    }
+};
