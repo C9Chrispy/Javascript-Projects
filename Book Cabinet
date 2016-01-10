@@ -1,0 +1,168 @@
+// List of Books
+var book = [
+    {
+        title: "The Giver",
+        stars: 4,
+        author: "Lois Lowry",
+        clr: color(250, 30, 30),
+        like: false
+    },
+    {
+        title: "Harry Potter",
+        stars: 5,
+        author: "J.K. Rowling",
+        clr: color(57, 212, 57),
+        like: true
+    },
+    {
+        title: "The Hunger Games",
+        stars: 5,
+        author: "Suzanne Collins",
+        clr: color(98, 98, 224),
+        like: true
+    }
+];
+
+var movie = [
+    {
+        title: "Star Wars VII",
+        stars: 5,
+        director: "JJ Abrams",
+        clr: color(242, 194, 72),
+        like: true
+    },
+    {
+        title: "Interstellar",
+        stars: 5,
+        director: "Christopher Nolan",
+        clr: color(18, 52, 112),
+        like: true
+    },
+    {
+        title: "Hateful Eight",
+        stars: 3,
+        director: "Quentin Tarantino",
+        clr: color(214, 30, 30),
+        like: false
+    }
+];
+
+var game = [
+    {
+        title: "Skyrim",
+        stars: 5,
+        dev: "Bethesda",
+        clr: color(209, 148, 73),
+        like: true
+    },
+    {
+        title: "NBA 2k15",
+        stars: 4,
+        dev: "2K Games",
+        clr: color(184, 13, 13),
+        like: true
+    },
+    {
+        title: "Star Wars Battlefront",
+        stars: 3,
+        dev: "EA/DICE",
+        clr: color(160, 204, 66),
+        like: false
+    }
+];
+
+// Shelves
+for (var shelf = 0; shelf < 3; shelf++) {
+    fill(173, 117, 33);
+    rect(0, 120 + 120 * shelf, width, 10);
+}
+
+// BOOKS
+
+for (var bIndex = 0; bIndex < book.length; bIndex++) {
+    // Top Shelf --> Books
+    fill(173, 117, 33);
+    rect(0, 120, width, 10);
+    
+    // Draw Books
+    for (var clrIndex = 0; clrIndex < book.length; clrIndex++) {
+        fill(book[bIndex].clr);
+        rect(25 + (bIndex*125), 20, 110, 100);
+    }
+    
+    // Title
+    fill(0, 0, 0);
+    text(book[bIndex].title, 55 + (bIndex*120), 29, 70, 100);
+    
+    // Author
+    for (var authorIndex = 0; authorIndex < book.length; authorIndex++) {
+        text(book[bIndex].author, 45 + (bIndex*130), 65, 70, 100);
+    }
+    
+    // Stars
+    for (var i = 0; i < book[bIndex].stars; i++) {
+        image(getImage("cute/Star"), 35 + (bIndex*122) + i * 20, 90, 20, 30);
+    }
+    
+    // Leaf of Recommendation
+    if (book[bIndex].like === true) {
+        image(getImage("avatars/leaf-blue"), 25 + (bIndex*125), 5, 20, 20);
+    }
+}
+
+// MOVIE
+for (var mIndex = 0; mIndex < movie.length; mIndex++) {
+    // Movies
+    for (var clrmIndex = 0; clrmIndex < movie.length; clrmIndex++) {
+        fill(movie[mIndex].clr);
+        rect(25 + (mIndex*125), 140, 110, 100);
+    }
+    
+    // Titles
+    fill(0, 0, 0);
+    text(movie[mIndex].title, 45 + (mIndex*125), 150, 70, 100);
+    
+    // Director
+    for (var directorIndex = 0; directorIndex < movie.length; directorIndex++) {
+        text(movie[mIndex].director, 45 + (mIndex*130), 175, 70, 100);
+    }
+    
+    // Stars
+    for (var i = 0; i < movie[mIndex].stars; i++) {
+        image(getImage("cute/Star"), 25 + (mIndex*130) + i * 20, 200, 20, 30);
+    }
+    
+    // Leaf of Recommendation
+    if (movie[mIndex].like === true) {
+        image(getImage("avatars/leaf-blue"), 25 + (mIndex*125), 125, 20, 20);
+    }
+}
+    
+// GAME
+for (var gIndex = 0; gIndex < game.length; gIndex++) {
+    // Games
+    for (var clrgIndex = 0; clrgIndex < game.length; clrgIndex++) {
+        fill(game[gIndex].clr);
+        rect(25 + (gIndex*125), 260, 110, 100);
+    }
+    
+    // Titles
+    fill(0, 0, 0);
+    text(game[gIndex].title, 45 + (gIndex*125), 270, 70, 100);
+    
+    // Developer
+    for (var devIndex = 0; devIndex < game.length; devIndex++) {
+        text(game[gIndex].dev, 45 + (gIndex*130), 305, 70, 100);
+    }
+    
+    // Stars
+    for (var g = 0; g < game[gIndex].stars; g++) {
+        image(getImage("cute/Star"), 25 + (gIndex*130) + g * 20, 320, 20, 30);
+    }
+    
+    // Leaf of Recommendation
+    if (game[gIndex].like === true) {
+        image(getImage("avatars/leaf-blue"), 25 + (gIndex*125), 255, 20, 20);
+    }
+    
+}
